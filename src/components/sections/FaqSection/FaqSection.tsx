@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import * as Icons from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { faqs } from '../../../data/site-data';
 
 export interface FaqSectionProps {
@@ -20,7 +20,7 @@ export const FaqSection = memo(function FaqSection({ openFaq, setOpenFaq }: FaqS
                 <div key={faq.question} className="rounded-[1.25rem] border border-white/10 bg-black/30">
                   <button onClick={() => setOpenFaq(openFaq === index ? -1 : index)} className="flex w-full items-center justify-between px-5 py-4 text-left text-white">
                     <span className="font-semibold">{faq.question}</span>
-                    <Icons.ChevronDown className={`transition ${openFaq === index ? 'rotate-180' : ''}`} size={18} />
+                    <ChevronDown className={`transition ${openFaq === index ? 'rotate-180' : ''}`} size={18} />
                   </button>
                   {openFaq === index && <p className="px-5 pb-5 text-sm leading-8 text-zinc-400">{faq.answer}</p>}
                 </div>

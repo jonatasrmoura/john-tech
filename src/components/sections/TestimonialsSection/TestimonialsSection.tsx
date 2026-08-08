@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import * as Icons from 'lucide-react';
+import { Star } from 'lucide-react';
 
 export type TestimonialsSectionProps = Record<string, never>;
 
@@ -19,7 +19,7 @@ export const TestimonialsSection = memo(function TestimonialsSection({  }: Testi
               ].map((testimonial) => (
                 <div key={testimonial.name} className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
                   <div className="flex items-center gap-1 text-cyan-300">
-                    {Array.from({ length: 5 }).map((_, index) => <Icons.Star key={index} size={16} fill="currentColor" />)}
+                    {Array.from({ length: 5 }).map((_, index) => <Star key={index} size={16} fill="currentColor" />)}
                   </div>
                   <p className="mt-5 text-zinc-300 leading-8">“{testimonial.text}”</p>
                   <div className="mt-6">

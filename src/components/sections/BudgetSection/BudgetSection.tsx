@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import * as Icons from 'lucide-react';
+import { CircleDollarSign, ArrowRight } from 'lucide-react';
 import { budgetOptions,equipmentOptions,useOptions } from '../../../data/site-data';
 
 export interface BudgetSectionProps {
@@ -58,13 +58,13 @@ export const BudgetSection = memo(function BudgetSection({ selectedEquipment, se
 
             <div className="rounded-[2rem] border border-cyan-400/20 bg-[linear-gradient(135deg,_rgba(0,191,255,0.12),_rgba(124,58,237,0.12))] p-8 backdrop-blur-xl">
               <div className="flex items-center gap-3 text-cyan-200">
-                <Icons.CircleDollarSign size={20} />
+                <CircleDollarSign size={20} />
                 <p className="text-sm font-semibold uppercase tracking-[0.3em]">Recomendação personalizada</p>
               </div>
               <h3 className="mt-5 text-2xl font-semibold text-white">{recommendation}</h3>
               <p className="mt-4 text-zinc-300 leading-8">Nossa sugestão considera performance, estabilidade e custo-benefício para o seu cenário.</p>
               <a href={whatsappUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-black transition hover:scale-[1.02]">
-                Solicitar este orçamento no WhatsApp <Icons.ArrowRight size={18} />
+                Solicitar este orçamento no WhatsApp <ArrowRight size={18} />
               </a>
             </div>
           </div>

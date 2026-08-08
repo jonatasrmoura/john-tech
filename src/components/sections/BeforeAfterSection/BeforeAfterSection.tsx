@@ -14,7 +14,19 @@ export const BeforeAfterSection = memo(function BeforeAfterSection({ comparison,
         <div className="absolute inset-y-0 left-0 overflow-hidden border-r-2 border-cyan-300" style={{ width: `${comparison}%` }}><img src={pcGamerAntes} alt="PC gamer antes da organização e limpeza técnica" className="h-full max-w-none object-cover object-center" style={{ width: beforeImageWidth }} /></div>
         <span className="absolute left-4 top-4 rounded-full bg-black/65 px-3 py-1 text-xs font-bold tracking-wide text-white">ANTES</span><span className="absolute right-4 top-4 rounded-full bg-cyan-300 px-3 py-1 text-xs font-bold tracking-wide text-black">DEPOIS</span>
         <span aria-hidden="true" className="absolute top-1/2 z-10 grid h-10 w-10 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/70 bg-black/70 text-lg text-white shadow-[0_0_20px_rgba(0,229,255,.55)]" style={{ left: `${comparison}%` }}>↔</span>
-        <input aria-label="Comparar antes e depois do PC gamer" type="range" min="0" max="100" value={comparison} onChange={(event) => setComparison(Number(event.target.value))} className="absolute inset-0 z-20 h-full w-full cursor-ew-resize opacity-0" />
+        <input 
+          aria-label="Comparar antes e depois do PC gamer" 
+          type="range" 
+          min="0" 
+          max="100" 
+          value={comparison} 
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={comparison}
+          aria-valuetext={`Progresso da comparação: ${comparison}% do estado Depois visível`}
+          onChange={(event) => setComparison(Number(event.target.value))} 
+          className="absolute inset-0 z-20 h-full w-full cursor-ew-resize opacity-0" 
+        />
         <p className="absolute inset-x-4 bottom-4 rounded-lg bg-black/50 px-3 py-2 text-xs leading-5 text-zinc-200 backdrop-blur-sm sm:inset-x-5 sm:text-sm">Arraste para comparar o PC gamer antes e depois do cuidado JohnTech.</p>
       </div>
     </div>
